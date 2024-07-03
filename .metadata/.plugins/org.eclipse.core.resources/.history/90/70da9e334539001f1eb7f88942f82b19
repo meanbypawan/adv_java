@@ -1,0 +1,21 @@
+package p1;
+
+/*
+  Student :
+    properties (id,name,age,contact)
+    Behaviour 
+ */
+class Student{
+ private int id;
+ private String name;
+ private int age;
+ private String contact;
+ 
+}
+public class ArrayListSeven {
+
+	public static void main(String[] args) {
+      
+	}
+
+}
