@@ -1,7 +1,6 @@
 package p1;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 /*
   POJO (plain old java object)
@@ -79,11 +78,7 @@ public class ArrayListSeven {
        al.add(new Student(4,"E",26,"9009111225"));
        al.add(new Student(5,"D",24,"9009111226"));
 	
-       Iterator<Student>itr =  al.iterator();
-       while(itr.hasNext()) {
-    	   Student s = itr.next();
-    	   System.out.println(s);
-       }
+       System.out.println(al);
        /*
          for(Student s : al)
     	 System.out.println(s);   
