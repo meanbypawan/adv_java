@@ -1,0 +1,30 @@
+package p1;
+
+import java.util.Enumeration;
+import java.util.Vector;
+
+public class TestVector {
+  public static void main(String args[]) {
+	 Vector<Integer> v = new Vector<Integer>(3,3);
+	 v.add(1);
+	 v.add(2);
+	 v.add(3);
+	 System.out.println("Capacity : "+v.capacity()); // 3
+	 v.add(4);
+	 System.out.println("Capacity : "+v.capacity()); // 6
+	 v.add(5);
+	 v.add(6);
+	 v.add(7);
+	 System.out.println("Capacity : "+v.capacity()); // 9
+	 
+	 System.out.println("Data element......");
+	 
+	 Enumeration<Integer>e =  v.elements();
+	 while(e.hasMoreElements()) {
+		Integer element =  e.nextElement();
+	    System.out.println(element);
+	 }
+	 
+	 
+  }
+}

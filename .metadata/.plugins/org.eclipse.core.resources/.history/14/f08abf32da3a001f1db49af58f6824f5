@@ -1,0 +1,9 @@
+package p1;
+
+import java.util.Vector;
+
+public class TestVector {
+  public static void main(String args[]) {
+	 Vector<Integer> v = new Vector<Integer>(3); 
+  }
+}
