@@ -1,0 +1,17 @@
+package p1;
+
+import java.util.TreeSet;
+
+public class TestTreeSetFirst {
+  public static void main(String args[]) {
+	  TreeSet<String> ts = new TreeSet<String>();
+      ts.add("100");
+      ts.add("10");
+      ts.add("50");
+      ts.add("100");
+      ts.add("40");
+      ts.add("20");
+      for(String element : ts)
+    	  System.out.println(element);
+  }
+}

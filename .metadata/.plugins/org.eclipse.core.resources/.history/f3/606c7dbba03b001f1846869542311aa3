@@ -1,0 +1,15 @@
+package p1;
+
+import java.util.LinkedHashSet;
+
+public class TestLinkedHashSetTwo {
+   public static void main(String args) {
+	   LinkedHashSet<String> lhs = new LinkedHashSet<String>();
+	   lhs.add("A");
+	   lhs.add("A");
+	   lhs.add("A");
+	   lhs.add("A");
+	   
+	   System.out.println(lhs);
+   }
+}
