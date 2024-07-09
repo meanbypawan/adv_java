@@ -1,0 +1,15 @@
+package p1;
+
+import java.util.HashMap;
+
+public class TestHashMap {
+  public static void main(String args[]) {
+	  HashMap<Integer, String> hm = new HashMap<Integer, String>();
+	  hm.put(100, "A");
+	  hm.put(200, "B");
+	  hm.put(120, "C");
+	  hm.put(98, "F");
+	  hm.put(110, "D");
+	  hm.put(110, "G");
+  }
+}

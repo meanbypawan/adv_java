@@ -1,0 +1,9 @@
+package p1;
+
+import java.util.ArrayList;
+
+public class TestingNullValues {
+  public static void main(String arg[]) {
+	  ArrayList al = new ArrayList();
+  }
+}

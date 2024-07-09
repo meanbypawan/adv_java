@@ -1,0 +1,23 @@
+package p1;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
+
+public class TestingNullValues {
+  public static void main(String arg[]) {
+	  ArrayList al = new ArrayList();
+	  al.add(null);
+	  al.add(null);
+	  System.out.println("ArrayList : "+al);
+	  
+	  LinkedList ll = new LinkedList();
+	  ll.add(null);
+	  ll.add(null);
+	  System.out.println("LinkedList : "+ll);
+	  
+	  HashSet<Object> hs = new HashSet<Object>();
+	  hs.add(null);
+	  hs.add(hs);
+  }
+}
