@@ -1,0 +1,9 @@
+package p1;
+
+import java.util.LinkedHashMap;
+
+public class TestLinkedHashMap {
+   public static void main(String args[]) {
+	   LinkedHashMap<Integer, String> map = new LinkedHashMap<Integer, String>();
+   }
+}
