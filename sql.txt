@@ -1,0 +1,59 @@
+Database [MySQL]
+  SQL :-
+  1. DDL (Data Definition Language)
+     create, alter, truncate
+  2. DML (Data Manipulation Language)
+     insert, delete, update
+  3. DRL (Data Reteriving Language)
+     select
+  4. TCL (Transaction Control Language)
+     commit , rollback
+  5. DCL (Data Control Language)
+     grant, revoke
+ -------------------------------------------------------------
+  Creating Database :-
+    create databae database_name
+    ex:- create database userdb    
+    use empdb;
+    Createing table
+    create table employee(
+      id int primary key auto_increment,
+      name varchar(100) not null,
+      age int,
+      salary int);
+    ------------------------------------------------
+   
+    insert into employee(name,age,salary) values('cheeku',23,120000);
+    insert into employee(name,age,salary) values('aayushman',28,78000),('akshat',24,85000),('ayush',22,810000),('hariom',25,550000)
+ -----------------------------------------------------------------------
+ Java  + MySQL(RDBMS)
+ CRUD
+ C :- Create/Inserting 
+ R :- Reterive/Selecting
+ U :- Update
+ D :- Delete   
+ 
+ select * from employee; // Complete Select
+ Projection in database
+ select id,name,salary from employee;
+ alias
+ select id as ID, name as EMP_NAME, salary as COST from employee
+ ---------------------------------------------------------------------
+ Filter (where)
+ select * from employee where age = 25
+ select * from employee where age >=24 and age <=28
+ select * from employee where age between 24 and 28
+ select * from employee where age = 25 or age = 28 or age = 22
+ select * from employee where age in(25,28,22)
+ select * from employee where age = null;
+ ----------------------------------------------------------
+ Wild card character
+  % zero or any number of occurance
+  ,
+   _
+ select * from employee where name like 'a%' 
+ select * from employee where name like 'a%h'  
+ select * from employee where name like '%k_'
+ select * from employee where name like '%ee%'
+ select * from employee where name like 'V% K%'
+ 
