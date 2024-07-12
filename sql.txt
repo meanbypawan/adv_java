@@ -56,4 +56,65 @@ Database [MySQL]
  select * from employee where name like '%k_'
  select * from employee where name like '%ee%'
  select * from employee where name like 'V% K%'
+ --------------------------------------------------------------
+ count(), avg(), sum(), min(), max()
+ select count(*) from employee
+ select count(age) from employee;
+ select max(age) from employee;
+select sum(salary) from employee;
+---------------------------------------------------
+order by
+select * from employee order by age
+select * from employee order by age desc
+select max(age) from employee;
+select * from employee where age = (
+   select max(age) from employee);
+select * from employee
+  where age = ( select max(age) from employee 
+    where age != (select max(age) from employee)
+   ); 
+select * from employee where age = ( select max(age) from employee where age < (select max(age) from employee where age !=(select max(age) from employee)));
+------------------------------------------------------------------
+select * from employee order by salary desc limit 5
+select * from employee order by salary desc limit 5,3
+--------------------------------------------------------------------------------
+Relationship
+  1. one to one
+  If record of one table is associated with one record of another table is called one to one relation ship
+   User hasOne Cart
+   Customer hasOne Account
+  2. one to many
+  If record of one table is associated with multiple record of another table is called one to many
+  Category hasMany Product
+  City hasMany Employee
+   
+  3. many to many
+    If one record of Table A  is assciated with multiple record of  table B and one record of Table B is associated with
+    multiple record of Table A is called Many Many
+    If you want to represent many to many relationship then you will have to make a use of third supporting table 
+   One Cart hasMany Product
+   Same product belongsToMany Cart
+   ----------------------------------------------
+   create table project(
+     id int primary key auto_increment,
+     projectName varchar(100),
+     clientName varchar(100),
+     empId int unique key not null,
+     foreign key(empId) references employee(id);
+  insert into project(projectName,clientName,empId)
+  values('Grow App','Jhonson',5),('Fundraiser','Alexan',7)
+-------------------------------------------------------------------
+  Country hasMany State
+  State hasMany Cities
+  City hasMany Employee
+  
+  create table country(id int primary key auto_increment,
+  countryName varchar(100));
+  create table state(id int primary key auto_increment,
+  stateName varchar(100), countryId int,
+  foreign key(countryId) references country(id))
+------------------------------------------------------------
+insert into country(countryName) values('India'),('Russia'),('Australia') 
+ insert into state(stateName,countryId)
+ values('MP',1),('UP',1),('MH',1),('GJ',1),('Mosco',2),('Mosco-2',2)
  
