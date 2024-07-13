@@ -159,4 +159,24 @@ group by city.cityName
 delete from employee where id = 12
 
  
+We have to connect
+  Java Application   with   Database
+  JA ------ JDBC ------- Database
+ -------------------------------------------
+ JDBC (Java Database Connectivity)
+ import java.sql.*;
+ 1. Driver (Interface)
+ 2. DriverManager
+     a. To Load the Driver
+     b. To get the connection with database
+   DriverManager.getConnection(String dbUrl,String username,String password)
+   e.g
+   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/empdb","root","root")
+ 3. Connection (Interface)     
+ 4. Statement(Interface)  :- To Execute Non-parameterized SQL
+ 5. PreparedStatement(Interface) :- To Execute parameterized SQL
+ 6. CallableStatement(Interface) :- To execute Stored procedure
+ 7. ResultSet (Interface) :- It is responsible to store the data which is return by the select query.
+ 8. ResultSetMetaData :- It is used to get information about the ResultSet
+ 9. SQLException :- To understand the sql related error/Exception     
  
