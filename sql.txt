@@ -117,4 +117,46 @@ Relationship
 insert into country(countryName) values('India'),('Russia'),('Australia') 
  insert into state(stateName,countryId)
  values('MP',1),('UP',1),('MH',1),('GJ',1),('Mosco',2),('Mosco-2',2)
+ --------------------------------------------------------
+ create table city(
+  id int primary key auto_increment,
+  cityName varchar(100),
+  stateId int,
+  foreign key(stateId) references state(id));
+ insert into city(cityName,stateId)
+ values('Indore',1),('Ujjain',1),('Jabalpur',1),('Agra',2),('Lucknow',2),('Mirzapur',2),('Mumbai',3),('Pune',3),('Ahamdabad',4),('Vadodra',4),('Gandhinagar',4),('Mosco-City',5) 
+ -------------------------------------------------
+ alter table employee add (
+   cityId int,
+   foreign key(cityId) references city(id))
+ -----------------------------------------------
+ employee details avilable in Employee Table
+ city details available in City Table
+ Where employee and city both are associated with one to many relationship.
+ Join :-
+   inner join
+   left outer
+   right outer
+   cross 
+   self join
+ select employee.id,employee.name,city.cityName
+ from employee inner join city on employee.cityId = city.id
+ 
+ select employee.id,employee.name,city.cityName,state.stateName,country.countryName
+ from employee inner join city on employee.cityId = city.id
+ inner join state on state.id = city.stateId
+ inner join country on country.id = state.countryId
+ 
+ select employee.id,employee.name,city.cityName
+ from employee left outer join city on employee.cityId = city.id
+------------------------------------------------------------
+select count(*),cityId from employee group by cityId 
+
+select count(*),city.cityName from employee 
+inner join city on employee.cityId = city.id
+group by city.cityName
+---------------------------------------------------------
+delete from employee where id = 12
+
+ 
  
