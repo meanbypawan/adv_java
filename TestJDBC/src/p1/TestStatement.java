@@ -10,22 +10,23 @@ public class TestStatement {
 	  try {
 		  con = GetConnection.getConnection();
 		  Scanner sc = new Scanner(System.in);
-		  
+
 		  System.out.println("Enter product name");
 		  String name = sc.next();
-		  
+
 		  System.out.println("Enter Brand");
 		  String brand = sc.next();
-		  
+
 		  System.out.println("Enter price");
 		  float price = sc.nextFloat();
-		  
+
 		  String sql = "insert into product(name,price,brand) values('"+name+"',"+price+",'"+brand+"')";
-	  
+
 	      Statement st = con.createStatement();
-	      
-	      if(st.executeUpdate(sql)!=0)
-	    	  System.out.println("Record Inserted..."); 
+
+	      if(st.executeUpdate(sql)!=0) {
+			System.out.println("Record Inserted...");
+		}
 	  }
 	  catch(Exception e) {
 		  e.printStackTrace();
