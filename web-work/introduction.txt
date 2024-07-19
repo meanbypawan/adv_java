@@ -1,0 +1,39 @@
+HTML :- Developed By Tim Berners Lee , Latest Version :- HTML5
+HyperText
+Markup :- Tag
+Language
+-----------------------------
+Tag
+1. Block Level Tag
+ div, p,...
+2. Inline 
+  small, span, label
+3. Formatting
+   b, i, u, sup, sub, strong..
+4. heading
+   h1, h2, h3, h4, h5, h6 
+5. Table
+    table, thead, tbody, tr, th, td, tfoot
+6. Media
+   img, vedio, audio
+7. Inputs 
+   <input type="text"/>
+   <input type="email"/>
+   <input type="password"/>
+   <input type="number"/>
+   <input type="radio"/>
+   <input type="checkbox"/>
+   <input type="file"/>
+   <select></select>
+   <input type="button"/>
+8. Button
+   <button>Say Hello</button>
+   <button type="submit"></button>
+   <button type="reset"></button> 
+9. header, nav, main, section, footer, article
+10. Form
+    form
+11  Listing
+    Ordered List , Unordered list
+    ol , ul, li
+12 html, head , title, meta, link, body, script                        
