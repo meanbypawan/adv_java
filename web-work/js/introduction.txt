@@ -1,0 +1,41 @@
+c,c++,java :-
+  20
+  int x = 20;
+JavaScript :-
+  1. Javascript is client side as well as server side scripting language
+  2. Javascript is function oriented , object oriented multiparadigm
+     scripting language.
+  3. Javascript is dynamically typed programming language.
+      var x = 20;   
+  4. Javascript has capability to conver html into the dhtml
+  5. Javascript is simple.
+  6. Javascript is single threaded
+  6. Java is synchronous by default.
+ ----------------------------------------------------------------
+ p1.html
+ <html>
+   <head>
+   </head>
+   <body>
+      <script>
+       /*
+         Javascript code
+       */
+      </script>
+   </body>
+ </html>
+---------------------------
+ Browser
+   Explorer :- [Chakra]
+   Microsoft Edge [Chakra core]
+   Google chrome [V8 engine]
+   Mozila Firefox [Spider Monkey]
+
+
+
+
+
+
+
+
+
