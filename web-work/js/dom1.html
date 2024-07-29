@@ -1,0 +1,22 @@
+<html>
+    <body>
+        <button onclick="sayHello()">Say Hello</button>
+        <br/><br/>
+        <input id="firstInput" type="text" placeholder="Enter a value"/>
+        <input id="secondInput" type="text" placeholder="Enter a value"/>
+        <button onclick="addition()">ADD</button>
+        <p id="result">Result : </p>
+        <script>
+            function addition(){
+             var first =  document.getElementById("firstInput").value;
+             var second = document.getElementById("secondInput").value;
+             var result = first*1 + second*1;
+             var p = document.getElementById("result");
+             p.innerHTML = "Addition : "+result;
+            }
+            function sayHello(){
+                alert("Hello Friends...");
+            }
+        </script>
+    </body>
+</html>
