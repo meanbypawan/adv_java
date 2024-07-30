@@ -19,12 +19,56 @@
                 <input onkeyup="validateUsername()" id="username" type="text" placeholder="Enter username" class="form-control"/>
                 <small id="usernameError"></small>
             </div>
+            <div class="from-group">
+              <div class="input-group mb-3">
+                <input onkeyup="validatePassword()" id="password" type="password" class="form-control" placeholder="Enter password">
+                <div class="input-group-append">
+                  <label id="passwordLabel" onclick="togglePassword()" class="btn btn-primary" type="submit">Show</label>
+                </div>
+              </div>
+              <small id="passwordError"></small>
+             </div>
             <div class="form-group">
+                <input id="mobile" type="text" placeholder="Enter mobile number" class="form-control"/>
+                <small id="mobileError"></small>
+            </div> 
+            <div class="form-group mt-3">
                 <button type="submit" onclick="return validateData()" class="btn btn-success">Submit</button>
             </div>
           </form>  
         </div>
         <script>
+            function validateMobile(){
+                var mobile = document.getElementById("mobile").value;
+            }
+            function togglePassword(){
+                var labelObj = document.getElementById("passwordLabel");
+                var passwordInput = document.getElementById("password");
+                var labelText = labelObj.innerText;
+                if(labelText == "Show"){
+                    passwordInput.type = "text";
+                    labelObj.innerText = "Hide";
+                }
+                else if(labelText == "Hide"){
+                    passwordInput.type = "password";
+                    labelObj.innerText = "Show";
+                }
+            }
+            function validatePassword(){
+                var status = true;
+                var password = document.getElementById("password").value;
+                var passwordError = document.getElementById("passwordError");
+                if(password.length == 0){
+                    status = false;
+                    passwordError.innerHTML = "password is required";
+                }
+                else if(password.length < 6 || password.length > 10){
+                    status = false;
+                    passwordError.innerHTML = "password length must be between 6 to 10";
+                }
+                else
+                  passwordError.innerHTML = "";
+            }
             function validateUsername(){
                 var status = true;
                 var username = document.getElementById("username").value;
@@ -39,7 +83,8 @@
             }
             function validateData(){
                var usernameStatus = validateUsername();
-               if(usernameStatus)
+               var passwordStatus = validatePassword();
+               if(usernameStatus && passwordStatus)
                  return true;
                return false; 
             }
