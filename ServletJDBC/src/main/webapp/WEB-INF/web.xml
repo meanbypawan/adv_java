@@ -32,6 +32,8 @@
   <filter-mapping>
     <filter-name>AuthFilter</filter-name>
     <url-pattern>/dashboard.html</url-pattern>
+    <url-pattern>/ProductListServlet</url-pattern>
+    <url-pattern>/add-product.html</url-pattern>
   </filter-mapping>
   <servlet>
     <description></description>
@@ -52,5 +54,33 @@
   <servlet-mapping>
     <servlet-name>AddProductServlet</servlet-name>
     <url-pattern>/AddProductServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProductListServlet</display-name>
+    <servlet-name>ProductListServlet</servlet-name>
+    <servlet-class>p1.ProductListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductListServlet</servlet-name>
+    <url-pattern>/ProductListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TestConfig</display-name>
+    <servlet-name>TestConfig</servlet-name>
+    <servlet-class>p1.TestConfig</servlet-class>
+    <init-param>
+      <param-name>message</param-name>
+      <param-value>Hello.....</param-value>
+    </init-param>
+    <init-param>
+      <param-name>messageTwo</param-name>
+      <param-value>Good Morning.....</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestConfig</servlet-name>
+    <url-pattern>/TestConfig</url-pattern>
   </servlet-mapping>
 </web-app>
