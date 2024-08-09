@@ -1,15 +1,10 @@
 <%@page import="dao.AdminDAO"%>
 <%@page import="model.Admin"%>
+<jsp:useBean id="admin" class="model.Admin"></jsp:useBean>
+<jsp:setProperty name="admin" property="*"></jsp:setProperty>
 <% 
  if(request.getMethod().equals("POST")){
   try{
-	 String username = request.getParameter("username");
-	 String password = request.getParameter("password");
-	 
-	 Admin admin = new Admin();
-	 admin.setUsername(username);
-	 admin.setPassword(password);
-	 
 	 if(AdminDAO.create(admin)){%>
 		<script>
 		  window.alert("Sign up successfully...");

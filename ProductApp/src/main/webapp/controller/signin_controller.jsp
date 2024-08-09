@@ -1,18 +1,13 @@
 <%@page import="dao.AdminDAO"%>
 <%@page import="model.Admin"%>
+<jsp:useBean id="admin" class="model.Admin"></jsp:useBean>
+<jsp:setProperty name="admin" property="*"></jsp:setProperty>
 <%
   if(request.getMethod().equals("POST")){
 	  try{
-		 String username = request.getParameter("username");
-		 String password = request.getParameter("password");
-		 
-		 Admin admin = new Admin();
-		 admin.setUsername(username);
-		 admin.setPassword(password);
-		 
 		 admin = AdminDAO.authenticate(admin);
 		 if(admin!=null)
-			 out.print("Sign in success");
+			 response.sendRedirect("../dashboard.jsp");
 		 else
 			 out.print("Sign in failed...");
 	  }
