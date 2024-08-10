@@ -4,4 +4,15 @@
   <welcome-file-list>
     <welcome-file>signin.jsp</welcome-file>
   </welcome-file-list>
+  <filter>
+    <display-name>AuthFilter</display-name>
+    <filter-name>AuthFilter</filter-name>
+    <filter-class>service.AuthFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AuthFilter</filter-name>
+    <url-pattern>/product-list.jsp</url-pattern>
+    <url-pattern>/add-product.jsp</url-pattern>
+    <url-pattern>/controller/delete_product_controller.jsp</url-pattern>
+  </filter-mapping>
 </web-app>

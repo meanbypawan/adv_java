@@ -33,10 +33,14 @@
     	     <td><%= p.getBrand()%></td>
     	     <td><%= p.getPrice()%></td>
     	     <td>
+    	      <a href="view-product.jsp?id=<%=p.getId() %>">
     	       <button class="btn btn-primary">Edit</button>
+    	      </a>
     	     </td>
     	     <td>
-    	       <button class="btn btn-danger">Delete</button>
+    	       <a href="controller/delete_product_controller.jsp?id=<%=p.getId() %>">
+    	         <button onclick="return window.confirm('Do you want to delete it ?');" class="btn btn-danger">Delete</button>
+    	       </a>
     	     </td>
     	   </tr>
          <% index++;}
@@ -44,5 +48,7 @@
       </tbody>
     </table>
   </div>
+  
+  
 </body>
 </html>

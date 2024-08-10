@@ -9,6 +9,39 @@ import model.Product;
 import service.GetConnection;
 
 public class ProductDAO {
+   public static Product get(int id) {
+	   Product p = null;
+	   try(Connection con = GetConnection.getConnection();){
+		   String sql = "select * from product where id = ?";
+		   PreparedStatement ps = con.prepareStatement(sql);
+		   ps.setInt(1, id);
+		   ResultSet rs = ps.executeQuery();
+		   if(rs.next()) {
+			   String title = rs.getString(2);
+			   String brand = rs.getString(3);
+			   int price = rs.getInt(4);
+			   p = new Product(id, title, brand, price);
+		   }
+	   }
+	   catch(Exception e) {
+		   e.printStackTrace();
+	   }
+	   return p;
+   }
+   public static boolean delete(int id) {
+	   boolean status = false;
+	   try(Connection con = GetConnection.getConnection();){
+		   String sql = "delete from product where id = ?";
+		   PreparedStatement ps = con.prepareStatement(sql);
+		   ps.setInt(1, id);
+		   if(ps.executeUpdate()!=0)
+			   status = true;
+	   }
+	   catch(Exception e) {
+		   e.printStackTrace();
+	   }
+	   return status;
+   }
    public static ArrayList<Product> list(){
 	   ArrayList<Product> al = new ArrayList<Product>();
 	   try(Connection con = GetConnection.getConnection();) {

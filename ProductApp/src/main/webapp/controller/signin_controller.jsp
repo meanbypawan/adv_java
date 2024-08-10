@@ -6,10 +6,13 @@
   if(request.getMethod().equals("POST")){
 	  try{
 		 admin = AdminDAO.authenticate(admin);
-		 if(admin!=null)
+		 if(admin!=null){
+			 session.setAttribute("isLoggedIn", "true");
+			 session.setAttribute("currentUser", admin.getUsername());
 			 response.sendRedirect("../dashboard.jsp");
+		 }
 		 else
-			 out.print("Sign in failed...");
+		  out.print("Sign in failed...");
 	  }
 	  catch(Exception e){
 		  e.printStackTrace();
