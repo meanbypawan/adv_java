@@ -9,6 +9,23 @@ import model.Product;
 import service.GetConnection;
 
 public class ProductDAO {
+   public static boolean update(Product p) {
+	   boolean status = false;
+	   try(Connection con = GetConnection.getConnection();){
+		   String sql = "update product set title = ?,brand = ?,price = ? where id = ?";
+		   PreparedStatement ps = con.prepareStatement(sql);
+		   ps.setString(1, p.getTitle());
+		   ps.setString(2,p.getBrand());
+		   ps.setInt(3, p.getPrice());
+		   ps.setInt(4, p.getId());
+		   if(ps.executeUpdate()!=0)
+			   status = true;
+	   }
+	   catch(Exception e) {
+		   e.printStackTrace();
+	   }
+	   return status;
+   }
    public static Product get(int id) {
 	   Product p = null;
 	   try(Connection con = GetConnection.getConnection();){

@@ -17,7 +17,8 @@
   %>
   <div class="container mt-5 p-2">
     <p class="bg-primary p-1">Update product details</p>
-    <form method="POST" action="controller/add_product_controller.jsp">
+    <form method="POST" action="controller/update_product_controller.jsp">
+      <input type="hidden" name="id" value="<%=p.getId() %>"/>
       <div class="form-group">
         <input value="<%=p.getTitle() %>" name="title" type="text" class="form-control" placeholder="Enter product title"/>
       </div>
